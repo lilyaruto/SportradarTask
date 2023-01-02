@@ -25,10 +25,12 @@ public class Venue {
     private String city_name;
     @NotBlank(message = "Venue: country name cannot be empty value!")
     private String country_name;
-    @NotBlank(message = "Venue: map coordinates cannot be empty value!")
+
     private String map_coordinates;
     @NotBlank(message = "Venue: country code cannot be empty value!")
     private String country_code;
-    @OneToMany(mappedBy = "venue", targetEntity = Event.class, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "venue", targetEntity = Event.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<Event> events = new HashSet<>();
 }
