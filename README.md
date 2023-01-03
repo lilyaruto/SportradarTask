@@ -7,14 +7,14 @@ Author: Yaroslav Vovkotrub
 1. Open folder sportradar-task in your IDE.
 2. Download JDK (if nedded).
 3. Run SportradarTaskApplication.java.
-4. Open your browsera and search [http://localhost:8080/].
-5. Click on one of the links ("Most probable events" redirect you to [http://localhost:8080/events]; "All competitors" to [http://localhost:8080/competitors]).
+4. Open your browsera and search [http://localhost:8080/](http://localhost:8080/).
+5. Click on one of the links ("Most probable events" redirect you to [http://localhost:8080/events](http://localhost:8080/events); "All competitors" to [http://localhost:8080/competitors](http://localhost:8080/competitors)).
 
 ## Additionally
 
 If you want to check how database looks like:
 
-1. Search [http://localhost:8080/h2-console].
+1. Search [http://localhost:8080/h2-console](http://localhost:8080/h2-console).
 2. Feel fields like this:
 
 	Driver Class: org.h2.Driver
