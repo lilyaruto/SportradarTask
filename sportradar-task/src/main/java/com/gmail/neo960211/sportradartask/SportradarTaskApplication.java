@@ -16,10 +16,8 @@ import org.springframework.context.annotation.Bean;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
@@ -27,6 +25,13 @@ public class SportradarTaskApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SportradarTaskApplication.class, args);
+    }
+
+    @Bean
+    public CommandLineRunner defaultDataLoader(VenueRepository venueRepository) {
+        return args -> {
+            venueRepository.save(new Venue("null", "null", 1, "null", "null", "null", "null", null));
+        };
     }
 @Bean
     public CommandLineRunner dataLoader(CompetitorRepository competitorRepository, VenueRepository venueRepository, EventRepository eventRepository) {
@@ -121,7 +126,6 @@ public class SportradarTaskApplication {
                     } else {
                         venue = venueRepository.findAllById(venueTemp[0]);
                     }
-                    System.out.println(Double.parseDouble(homeProb.get(i).toString()));
                     String strHomeProb = homeProb.get(i).toString();
                     String strDrawProb = drawProb.get(i).toString();
                     String strAwayProb = awayProb.get(i).toString();

@@ -4,8 +4,6 @@ import com.gmail.neo960211.sportradartask.model.Competitor;
 import com.gmail.neo960211.sportradartask.repository.CompetitorRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 

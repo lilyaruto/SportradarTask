@@ -5,7 +5,6 @@ import com.gmail.neo960211.sportradartask.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
