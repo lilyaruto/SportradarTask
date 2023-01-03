@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -19,13 +19,12 @@ public class Event {
     @Id
     private String sport_event_id;
     @NotNull(message = "Event: start date cannot be empty value!")
-    private LocalDate start_date;
+    private LocalDateTime start_date;
     @NotBlank(message = "Event: sport name cannot be empty value!")
     private String sport_name;
     @NotBlank(message = "Event: competition name cannot be empty value!")
     private String competition_name;
     @NotNull
-    @Column(unique = true)
     private String competition_id;
     @NotBlank(message = "Event: season name cannot be empty value!")
     private String season_name;
