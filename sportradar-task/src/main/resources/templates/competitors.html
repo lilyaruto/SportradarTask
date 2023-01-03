@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Competitors List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "tempCompetitors:${competitors}">
+            <td th:text="${tempCompetitors.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
