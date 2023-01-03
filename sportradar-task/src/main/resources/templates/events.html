@@ -13,14 +13,30 @@
         <th>Away competitor</th>
         <th>Date</th>
         <th>Venue</th>
+        <th>Probability</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each = "tempEvents:${events}">
+    <tr th:each = "tempEvents:${events}" th:switch=true>
         <td th:text="${tempEvents.homeCompetitor.name}"></td>
         <td th:text="${tempEvents.awayCompetitor.name}"></td>
         <td th:text="${tempEvents.start_date}"></td>
         <td th:text="${tempEvents.venue.name}"></td>
+        <td th:case="${tempEvents.probability_home_team_winner > tempEvents.probability_draw &&
+                        tempEvents.probability_home_team_winner > tempEvents.probability_away_team_winner}">
+            <span th:text="${tempEvents.probability_home_team_winner}"></span>
+            <span> HOME</span>
+        </td>
+        <td th:case="${tempEvents.probability_away_team_winner > tempEvents.probability_draw &&
+                        tempEvents.probability_away_team_winner > tempEvents.probability_home_team_winner}">
+            <span th:text="${tempEvents.probability_away_team_winner}"></span>
+            <span> AWAY</span>
+        </td>
+        <td th:case="${tempEvents.probability_draw > tempEvents.probability_home_team_winner &&
+                        tempEvents.probability_draw > tempEvents.probability_away_team_winner}">
+            <span th:text="${tempEvents.probability_draw}"></span>
+            <span> DRAW</span>
+        </td>
     </tr>
     </tbody>
 </table>
