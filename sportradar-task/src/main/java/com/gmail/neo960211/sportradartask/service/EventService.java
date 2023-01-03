@@ -4,6 +4,7 @@ import com.gmail.neo960211.sportradartask.model.Event;
 import com.gmail.neo960211.sportradartask.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -30,6 +31,18 @@ public class EventService {
             }
         });
         return list;
+    }
+
+    public List<Event> selectNumberOfEvents(List<Event> list, int sizeOfList) {
+        List<Event> temp = new ArrayList<>();
+        if (sizeOfList <= list.size()) {
+            for (int i = 0; i < sizeOfList; i++) {
+                temp.add(list.get(i));
+            }
+            return temp;
+        } else {
+            return list;
+        }
     }
 
     public static double compareProbabilities(Event e) {

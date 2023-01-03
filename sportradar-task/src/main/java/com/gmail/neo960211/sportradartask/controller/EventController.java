@@ -22,7 +22,7 @@ public class EventController {
 
     @RequestMapping("/events")
     public String start(Model model) {
-        model.addAttribute("events", eventService.sortList());
+        model.addAttribute("events", eventService.selectNumberOfEvents(eventService.sortList(), 10));
         return "events";
     }
 }
