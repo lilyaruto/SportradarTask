@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body>
+<h1>Most probable results</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Home competitor</th>
+        <th>Away competitor</th>
+        <th>Date</th>
+        <th>Venue</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "tempEvents:${events}">
+        <td th:text="${tempEvents.homeCompetitor.name}"></td>
+        <td th:text="${tempEvents.awayCompetitor.name}"></td>
+        <td th:text="${tempEvents.start_date}"></td>
+        <td th:text="${tempEvents.venue.name}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
